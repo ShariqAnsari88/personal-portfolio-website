@@ -1,0 +1,34 @@
+@import "../../../style-config/mixins.scss",
+    "../../../style-config/variable.scss";
+
+.contact-info-box {
+    background-color: $black-lighter;
+    width: 100%;
+    padding: 15px;
+    border-radius: 6px;
+    color: $gray;
+    @include small-screen {
+        width: 355px;
+        padding: 30px;
+    }
+    h4 {
+        line-height: 24px;
+        margin-bottom: 20px;
+        @include small-screen {
+            line-height: 34px;
+        }
+    }
+    .contact-option {
+        display: flex;
+        align-items: center;
+        margin-top: 15px;
+        svg {
+            color: $yellow;
+            font-size: 16px;
+        }
+        .text {
+            color: $white;
+            margin-left: 15px;
+        }
+    }
+}

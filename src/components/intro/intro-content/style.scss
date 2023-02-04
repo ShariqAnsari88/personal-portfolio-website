@@ -1,0 +1,191 @@
+@import "../../../style-config/mixins.scss",
+    "../../../style-config/variable.scss";
+
+.intro-content {
+    flex-grow: 1;
+    display: flex;
+    padding-top: 75px;
+    @include small-screen {
+        padding-top: 0;
+        align-items: flex-end;
+    }
+    .layout {
+        display: flex;
+        flex-direction: column;
+        @include small-screen {
+            flex-direction: row;
+        }
+        .left-col {
+            width: 100%;
+            @include small-screen {
+                width: 45%;
+            }
+            @include medium-screen {
+                padding-top: 55px;
+            }
+            @include large-screen {
+                padding-top: 0;
+                width: 37%;
+            }
+            .title {
+                display: flex;
+                flex-direction: column;
+                color: $white;
+                text-align: center;
+                @include small-screen {
+                    text-align: left;
+                }
+                .small-text {
+                    @include typography(24px, 400, 30px);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    @include small-screen {
+                        justify-content: flex-start;
+                        @include typography(42px, 400, 48px);
+                    }
+                    .text {
+                    }
+                    .icon {
+                        margin-left: 10px;
+                    }
+                }
+                .big-text {
+                    @include typography(42px, 400, 52px);
+                    @include small-screen {
+                        @include typography(62px, 400, 72px);
+                    }
+                }
+            }
+            p {
+                @include typography(14px, 400, 20px);
+                margin: 15px 0;
+                padding: 0 15px;
+                @include small-screen {
+                    @include typography(18px, 400, 24px);
+                    margin: 25px 0;
+                    padding: 0;
+                }
+            }
+            .call-to-action {
+                margin: 0 auto;
+                @include small-screen {
+                    margin: 0;
+                }
+            }
+        }
+        .right-col {
+            width: 100%;
+            display: flex;
+            align-items: flex-end;
+            position: relative;
+            flex-grow: 1;
+            @include small-screen {
+                width: 55%;
+                flex-grow: unset;
+            }
+            @include large-screen {
+                width: 63%;
+            }
+            img {
+                width: 100%;
+                display: block;
+                margin-bottom: 30px;
+                @include small-screen {
+                    margin-bottom: 40px;
+                }
+                @include large-screen {
+                    margin-bottom: 50px;
+                    position: relative;
+                    right: -100px;
+                }
+            }
+            .highlights {
+                position: absolute;
+                border-radius: 6px;
+                @include glassmorphism-effect;
+                transform: scale(0.6);
+                @include small-screen {
+                    transform: scale(1);
+                }
+                .icon {
+                    width: 55px;
+                    height: 55px;
+                    min-width: 55px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                    background-color: $yellow;
+                    font-size: 24px;
+                    color: $black-light;
+                }
+                .text {
+                    padding: 0 10px;
+                    @include typography(18px, 400, 24px);
+                    color: $black-light;
+                    span {
+                        @include typography(18px, 400, 24px);
+                    }
+                }
+
+                &.horizontal {
+                    width: 208px;
+                    height: 95px;
+                    display: flex;
+                    align-items: center;
+                    top: 165px;
+                    left: -25px;
+                    padding: 20px 10px 20px 20px;
+                    @include small-screen {
+                        top: 250px;
+                        left: 0px;
+                    }
+                    @include medium-screen {
+                        top: 250px;
+                        left: 0px;
+                    }
+                    @include large-screen {
+                        top: 270px;
+                        left: 120px;
+                    }
+                }
+                &.verticle {
+                    width: 135px;
+                    height: 165px;
+                    min-height: 165px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    top: 50px;
+                    right: 0;
+                    padding: 20px;
+                    padding-bottom: 10px;
+                    text-align: center;
+                    @include small-screen {
+                        top: 50px;
+                        right: 60px;
+                    }
+                    @include medium-screen {
+                        top: 50px;
+                        right: 60px;
+                    }
+                    @include large-screen {
+                        top: 85px;
+                        right: -10px;
+                    }
+                    .text {
+                        padding: 0 10px;
+                        @include typography(14px, 400, 18px);
+                        color: $black-light;
+                        margin-top: 10px;
+                        span {
+                            @include typography(18px, 700, 24px);
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

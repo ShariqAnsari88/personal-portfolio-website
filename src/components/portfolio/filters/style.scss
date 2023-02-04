@@ -1,0 +1,38 @@
+@import "../../../style-config/mixins.scss",
+    "../../../style-config/variable.scss";
+
+.filters-menu-items {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    list-style-type: none;
+    margin: 30px 0;
+    overflow: auto;
+    justify-content: flex-start;
+    @include small-screen {
+        justify-content: center;
+    }
+    .filter-menu-item {
+        color: $white;
+        @include typography(18px, 400, 22px);
+        padding: 10px 20px;
+        margin: 0 2.5px;
+        box-shadow: inset 0 0 0 0 $white;
+        transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        cursor: pointer;
+        white-space: nowrap;
+        @include small-screen {
+            @include typography(22px, 400, 28px);
+            padding: 10px 20px;
+            margin: 0 2.5px;
+        }
+        &:hover,
+        &.active {
+            box-shadow: inset 200px 0 0 0 $white;
+            color: $black;
+        }
+    }
+}

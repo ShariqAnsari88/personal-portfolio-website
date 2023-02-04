@@ -1,0 +1,49 @@
+@import "./variable.scss";
+
+@mixin typography($size: 18px, $weight: 400, $lineHeight: 24px) {
+    font-style: normal;
+    font-weight: $weight;
+    font-size: $size;
+    line-height: $lineHeight;
+}
+
+@mixin large-screen {
+    @media only screen and (min-width: 1441px) {
+        @content;
+    }
+}
+
+@mixin medium-screen {
+    @media only screen and (min-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin small-screen {
+    @media only screen and (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin glassmorphism-effect {
+    background: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(7.5px);
+    -webkit-backdrop-filter: blur(7.5px);
+}
+
+@mixin transition($time: 200ms) {
+    transition: all $time cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@mixin transition-ease($time: 200ms) {
+    transition: all $time ease-in-out;
+}
+
+@mixin ellipsis($line: 2) {
+    display: -webkit-box;
+    -webkit-line-clamp: $line;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

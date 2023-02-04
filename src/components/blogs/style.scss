@@ -1,0 +1,13 @@
+@import "../../style-config/mixins.scss", "../../style-config/variable.scss";
+
+.blogs-content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 25px;
+    flex-direction: column;
+    @include small-screen {
+        margin-top: 75px;
+        flex-direction: row;
+    }
+}

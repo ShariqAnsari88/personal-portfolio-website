@@ -1,0 +1,61 @@
+@import "../../style-config/mixins.scss";
+
+.Intro-section {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(
+        121.46deg,
+        #2559cd 9%,
+        #1c4cc8 41%,
+        #0f38c1 80%
+    );
+    position: relative;
+    display: flex;
+    justify-content: center;
+    .vector-bg {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-image: url("../../images/vector-background.png");
+        background-size: cover;
+        background-position: center right;
+        background-repeat: no-repeat;
+        z-index: 0;
+        opacity: 0.4;
+        @include small-screen {
+            background-position: center center;
+        }
+    }
+    .cloud {
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        width: 300%;
+        z-index: 2;
+        @include small-screen {
+            width: 100%;
+        }
+    }
+    .cloud-soft {
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        width: 300%;
+        z-index: 1;
+        mix-blend-mode: soft-light;
+        @include small-screen {
+            width: 100%;
+        }
+    }
+    .content {
+        width: 100%;
+        padding: 0 20px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        @include small-screen {
+            width: 1200px;
+        }
+    }
+}

@@ -1,0 +1,77 @@
+@import "../../../style-config/variable.scss";
+@import "../../../style-config/mixins.scss";
+
+.top-navigation-bar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    @include small-screen {
+        margin-top: 60px;
+    }
+    .app-logo {
+        width: 100px;
+        flex-shrink: 0;
+        @include small-screen {
+            width: 143px;
+        }
+        img {
+            width: 100%;
+            display: block;
+        }
+    }
+    .mobile-menu {
+        position: relative;
+        z-index: 99;
+        @include small-screen {
+            display: none;
+        }
+    }
+    .navigation {
+        align-items: center;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: black;
+        z-index: 9;
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 35px;
+        @include small-screen {
+            display: flex;
+            flex-direction: row;
+            position: relative;
+            width: auto;
+            height: auto;
+            gap: unset;
+            background-color: transparent;
+        }
+        &.active {
+            display: flex;
+        }
+        .navigation-item {
+            color: $white;
+            @include typography(24px, 700, 1);
+            margin-left: 20px;
+            padding: 5px;
+            box-shadow: inset 0 0 0 0 $white;
+            transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            cursor: pointer;
+            @include small-screen {
+                @include typography(18px, 400, 1);
+            }
+            &:hover {
+                box-shadow: inset 200px 0 0 0 $white;
+                color: $black;
+            }
+        }
+        .call-to-action {
+            margin-left: 25px;
+        }
+    }
+}
